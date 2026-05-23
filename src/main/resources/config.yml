@@ -1,0 +1,97 @@
+database:
+  type: SQLite
+  mysql:
+    host: localhost
+    port: 3306
+    database: auth
+    username: root
+    password: ""
+    useSSL: false
+    pool:
+      max-pool-size: 10
+      min-idle: 2
+      connection-timeout: 5000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  sqlite:
+    filename: "auth.db"
+
+security:
+  password:
+    min-length: 6
+    max-length: 30
+    hash-algorithm: SHA-256
+  session:
+    timeout: 300
+  max-login-attempts: 3
+  login-timeout: 60
+  ip-session:
+    enabled: true
+    lifetime: 21600
+
+reminders:
+  enabled: true
+  interval: 5000
+
+restrictions:
+  block-commands: true
+  block-movement: true
+  block-chat: true
+  block-interact: true
+  block-damage: true
+  block-inventory: true
+  block-drop: true
+  block-pickup: true
+  block-break: true
+  block-place: true
+
+telegram:
+  enabled: false
+  bot-token: "YOUR_BOT_TOKEN_HERE"
+  bot-username: "nezxenka"
+  link-code-length: 8
+  link-code-expiry: 300
+
+  2fa:
+    enabled: true
+    timeout: 60
+
+  notifications:
+    join:
+      enabled: true
+      message: "Игрок %nickname% зашёл на сервер%newline%IP: %ip%"
+    leave:
+      enabled: true
+      message: "Игрок %nickname% вышел с сервера%newline%IP: %ip%"
+
+  keyboard:
+    approve:
+      text: "Подтвердить"
+      callback: "2fa_approve"
+    decline:
+      text: "Отклонить"
+      callback: "2fa_decline"
+    unlink:
+      text: "Отвязать"
+      callback: "unlink"
+    info:
+      text: "Инфо"
+      callback: "info"
+
+  messages:
+    start: "Привет! Используй /привязать никнейм чтобы привязать аккаунт."
+    link_usage: "Использование: /привязать никнейм"
+    link_player_not_found: "Игрок с ником %nickname% не найден или не зарегистрирован."
+    link_already_linked: "Этот аккаунт уже привязан к Telegram."
+    link_telegram_already_linked: "Ваш Telegram уже привязан к другому аккаунту."
+    link_code: "Код привязки: %code%%newline%Зайдите на сервер и введите /link %code%"
+    link_success: "Аккаунт успешно привязан! 2FA автоматически включена."
+    unlink_not_linked: "Ваш Telegram не привязан ни к какому аккаунту."
+    unlink_success: "Привязка успешно удалена."
+    info_message: "Ник: %nickname%%newline%2FA: Включена%newline%Статус: %status%"
+    info_online: "На сервере"
+    info_offline: "Не в сети"
+    2fa_request: "Кто-то пытается зайти под аккаунтом %nickname%%newline%IP: %ip%%newline%Это вы?"
+    2fa_approved: "Вход подтверждён."
+    2fa_declined: "Вход отклонён. Аккаунт заблокирован."
+    2fa_kick: "Вы не подтвердили вход. Отключены."
