@@ -1,0 +1,41 @@
+name: Auth
+version: '1.0'
+main: org.nezxenka.auth.Auth
+api-version: '1.16'
+author: nezxenka
+description: Secure authentication plugin
+
+commands:
+  login:
+    description: Login to the server
+    usage: /login <password>
+    aliases: [log, l]
+  register:
+    description: Register an account
+    usage: /register <password> <password>
+    aliases: [reg]
+  changepass:
+    description: Change your password
+    usage: /changepass <oldPassword> <newPassword>
+    aliases: [changepassword, passwd]
+  auth:
+    description: Auth admin commands
+    usage: /auth <reload>
+    permission: auth.admin
+    aliases: [authadmin]
+  adminchangepass:
+    description: Change a player's password
+    usage: /adminchangepass <player> <newPassword>
+    permission: auth.admin
+    aliases: [adminpass, forcepass]
+  link:
+    description: Link your Telegram account
+    usage: /link <code>
+
+permissions:
+  auth.admin:
+    description: Admin commands for Auth
+    default: op
+  auth.bypass:
+    description: Bypass authentication
+    default: false
