@@ -1,5 +1,5 @@
 name: Auth
-version: '1.0'
+version: '${version}'
 main: org.nezxenka.auth.Auth
 api-version: '1.16'
 author: nezxenka

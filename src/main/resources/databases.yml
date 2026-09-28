@@ -13,5 +13,6 @@ database:
       connection-timeout: 5000
       idle-timeout: 600000
       max-lifetime: 1800000
+    properties: {}
   sqlite:
     filename: "auth.db"

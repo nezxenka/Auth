@@ -1,0 +1,23 @@
+[versions]
+paper = "1.16.5-R0.1-SNAPSHOT"
+slf4j = "1.7.30"
+lombok = "1.18.48"
+hikaricp = "7.1.0"
+mysql = "26.7.0"
+caffeine = "3.2.4"
+gson = "2.14.0"
+bcrypt = "0.10.2"
+shadow = "8.3.6"
+
+[libraries]
+paper-api = { module = "com.destroystokyo.paper:paper-api", version.ref = "paper" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+hikaricp = { module = "com.zaxxer:HikariCP", version.ref = "hikaricp" }
+mysql-connector = { module = "com.mysql:mysql-connector-j", version.ref = "mysql" }
+caffeine = { module = "com.github.ben-manes.caffeine:caffeine", version.ref = "caffeine" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+bcrypt = { module = "at.favre.lib:bcrypt", version.ref = "bcrypt" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
